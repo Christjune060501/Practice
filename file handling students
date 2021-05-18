@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    FILE *fptr;
+    int id;
+    char name[30];
+    float grade1;
+    float grade2;
+    float grade3;
+    int total;
+    float average;
+    
+    total = (grade1 + grade2 + grade3);
+    average = (total / 3);
+    fptr = fopen("Student file.txt", "w+");/* open for writing */
+    if (fptr == NULL)
+    {
+    printf("File does not exists \n");
+    return;
+    }
+    printf("Enter the name \n");
+    scanf("%s", name);
+    fprintf(fptr, "Name= %s\n", name);
+    
+    printf("Enter the id\n");
+    scanf("%d", &id);
+    fprintf(fptr, "Id= %d\n", id);
+    
+    printf("Math Grade: \n");
+    scanf("%f", &grade1);
+    fprintf(fptr, "Math Grade= %.2f\n", grade1);
+    
+    printf("Science Grade: \n");
+    scanf("%f", &grade2);
+    fprintf(fptr, "Science Grade= %.2f\n", grade2);
+    
+    printf("English Grade: \n");
+    scanf("%f", &grade3);
+    fprintf(fptr, "English Grade= %.2f\n", grade3);
+    
+    printf("Total Grades: %0.2f\n", total);
+    fprintf(fptr, "Total Grades = %0.2f \n", total);
+    
+    printf("Total Average: %0.2f \n", average);
+    fprintf(fptr, "Total Average = %0.2f \n", average);
+   
+    fclose(fptr);
+
+    return 0;
+}
