@@ -5,15 +5,12 @@ void main()
 {
     FILE *fptr;
     int id;
-    char name[30];
-    float grade1;
-    float grade2;
-    float grade3;
-    int total;
-    float average;
+    char name[100];
+    float a, b, c, average, total;
     
-    total = (grade1 + grade2 + grade3);
-    average = (total / 3);
+    total = a + b + c;
+    average = total / 3;
+    
     fptr = fopen("Student file.txt", "w+");/* open for writing */
     if (fptr == NULL)
     {
@@ -28,17 +25,17 @@ void main()
     scanf("%d", &id);
     fprintf(fptr, "Id= %d\n", id);
     
-    printf("Math Grade: \n");
-    scanf("%f", &grade1);
-    fprintf(fptr, "Math Grade= %.2f\n", grade1);
+    printf("Math Grade: ");
+    scanf("%f", &a);
+    fprintf(fptr, "Math Grade= %.2f\n", a);
     
-    printf("Science Grade: \n");
-    scanf("%f", &grade2);
-    fprintf(fptr, "Science Grade= %.2f\n", grade2);
+    printf("Science Grade: ");
+    scanf("%f", &b);
+    fprintf(fptr, "Science Grade= %.2f\n", b);
     
-    printf("English Grade: \n");
-    scanf("%f", &grade3);
-    fprintf(fptr, "English Grade= %.2f\n", grade3);
+    printf("English Grade:");
+    scanf("%f", &c);
+    fprintf(fptr, "English Grade= %.2f\n", c);
     
     printf("Total Grades: %0.2f\n", total);
     fprintf(fptr, "Total Grades = %0.2f \n", total);
